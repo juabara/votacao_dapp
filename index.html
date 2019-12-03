@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Votação Blockchain</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script charset="utf-8"  src="https://cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript"></script>
-    <script src="js/abi.js"></script>
-    <script src="js/blockchain.js"></script>
-  </head>
-  <body>
-    <h1>Votação Blockchain</h1>
 
+<head>
+  <meta charset="utf-8">
+  <title>Votação Blockchain</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script charset="utf-8" src="https://cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript"></script>
+  <script src="js/abi.js"></script>
+  <script src="js/blockchain.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Votação Blockchain</h1>
+    </div>
+    <div id="exTab1" class="container">
     <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#">Votação em Dia</a></li>
-      <li role="presentation"><a href="#">Votação Pendente</a></li>
+      <li class="active"><a href="#dia" data-toggle="tab">Votação em Dia</a></li>
+      <li><a href="#pendente" data-toggle="tab">Votação Pendente</a></li>
     </ul>
 
-  </body>
+    <div class="tab-content clearfix">
+      <div class="tab-pane active" id="dia">
+        <h3>Votação em Dia</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="nome">
+          </div>
+          <div class="form-group">
+            <label for="candidate">Candidato</label>
+            <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="Huguinho" checked>
+                  Huguinho
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="Zezinho">
+                  Zezinho
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="Luizinho">
+                  Luizinho
+                </label>
+              </div>
+          </div>
+          <button type="button" class="btn btn-primary" onsubmit="votar(); return false;">Votar</button>
+        </form>
+      </div>
+      <div class="tab-pane" id="pendente">
+        <h3>Votação pendente</h3>
+        <p>Você deve pagar uma multa de <b>1 ether</b></p>
+        <button type="button" class="btn btn-primary" onclick="pagarMulta(); return false;">Pagar</button>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
