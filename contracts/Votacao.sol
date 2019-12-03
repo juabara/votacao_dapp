@@ -5,7 +5,7 @@ contract Votacao {
     uint public amount = 0;
     address public owner;
     address[] public payers;
-    mapping(string => string) public votes;
+    mapping(string => string) votes;
 
     constructor() public {
         owner = msg.sender;
