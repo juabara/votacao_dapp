@@ -9,7 +9,7 @@ function votar() {
   var candidate = $('input:radio:checked').val();
 
   if (!name || !candidate) {
-    alert('Por favor informe o nome e o candidato');
+    return alert('Por favor informe o nome e o candidato');
   }
 
   contrato.vote(name, candidate)
