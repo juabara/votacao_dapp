@@ -15,11 +15,12 @@ function votar() {
   contrato.vote(name, candidate)
     .then(function (transacao) {
       console.log('transacao', transacao);
+      alert('Transação:' + JSON.stringify(transacao));
       return transacao.wait();
     })
     .then(function (resultado) {
       console.log('resultado', resultado);
-      alert('Voto computado com sucesso')
+      alert('Voto computado com sucesso');
     })
     .catch(function (err) {
       console.log('erro', err);
@@ -32,11 +33,12 @@ function pagarMulta() {
   contrato.payFine()
     .then(function (transacao) {
       console.log('transacao multa', transacao);
+      alert('Transação:' + JSON.stringify(transacao));
       return transacao.wait();
     })
     .then(function (resultado) {
       console.log('resultado multa', resultado);
-      alert('Multa paga com sucesso')
+      alert('Multa paga com sucesso');
     })
     .catch(function (err) {
       console.log('erro multa', err);
